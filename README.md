@@ -352,6 +352,8 @@ Versioned tags build and publish the wheel and source distribution to PyPI.
 Update the separate Homebrew tap after PyPI confirms the release. See
 [docs/RELEASING.md](docs/RELEASING.md) for the release and Git steps.
 
+
+[![Star History Chart](https://app.repohistory.com/api/svg?repo=a-shygun/terrascope&type=Date&background=0D1117&color=6278f8)](https://app.repohistory.com/star-history)
 ## License
 
 MIT. See `LICENSE`.
