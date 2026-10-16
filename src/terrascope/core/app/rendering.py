@@ -8,6 +8,7 @@ from .shared import (
     MIN_TERMINAL_WIDTH,
     STATUS_OFFSET,
     TABS,
+    TIMEZONE_KEY,
     TERMINAL_TOO_SMALL_TEXT,
     concise_error_message,
     current_time_text,
@@ -53,6 +54,9 @@ class RenderingMixin:
         map_top, map_left, map_height, map_width = layout.map
         self._controls_layout = None
         if layout.tabs is not None:
+            clock_text = current_time_text(self.selected_timezone)
+            if TABS[self.active_tab].name == "time":
+                clock_text = f"{TIMEZONE_KEY} TZ {clock_text}"
             self._controls_layout = draw_tab_bar(
                 self.stdscr,
                 layout.tabs,
@@ -60,7 +64,7 @@ class RenderingMixin:
                 self.active_tab,
                 self.colors,
                 self.controls_expanded,
-                current_time_text(self.selected_timezone),
+                clock_text,
                 self.panel_orientation,
             )
         frame_size = (map_width - 4, map_height - 2)

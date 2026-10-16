@@ -174,6 +174,7 @@ Layer-specific keys:
 | `N` | Day/night layer |
 | `L` | Day/night tint/fill mode |
 | `[` / `]` | Time slider where available |
+| `Z` | Open the timezone selector on the Time tab; type to search, use arrows to navigate, and press Enter to select |
 
 Run this for the effective key list:
 
@@ -186,7 +187,9 @@ terrascope --list-keys
 - `MAP`: base world map with country, province/state, and city detail as
   zoom allows.
 - `TIME`: day/night bands, sun information, moon information, and timezone
-  selection.
+  selection. Press `Z` (shown beside the clock) to open the timezone picker
+  without a mouse; type a timezone name to search, navigate with the arrow keys,
+  select with Enter, or dismiss with Esc.
 - `WEATHER`: city weather, forecast panel, radar overlay, and USGS
   earthquakes.
 - `PLANES`: OpenSky aircraft positions, trails, categories, and Natural Earth
@@ -272,7 +275,13 @@ You can override settings without editing the package:
 terrascope --config ~/terrascope.yaml
 terrascope --set 'map.zoom.max=128'
 terrascope --set 'map.land_color="#101018"'
+terrascope --set 'app.keys.timezone="t"'
 ```
+
+The timezone picker shortcut defaults to `Z` and works on the Time tab. Set
+`app.keys.timezone` in your config to a different character or list of
+characters if you prefer another binding. `terrascope --list-keys` shows the
+effective shortcut.
 
 Inspect the final merged config:
 

@@ -556,6 +556,8 @@ def print_key_list() -> None:
     for action, spec in config.CFG["app"]["keys"].items():
         keys = " ".join(str(k) for k in spec) if isinstance(spec, (list, tuple)) else str(spec)
         rows.append((action.replace("_", " "), keys))
+    if "timezone" not in config.CFG["app"]["keys"]:
+        rows.append(("timezone", "z"))
     for label, path in _LAYER_KEYS:
         key = config.get_path(path)
         if key:

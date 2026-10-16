@@ -85,6 +85,7 @@ app:
     reset_view: "0"
     slider_down: "["               # time slider (layers that have one)
     slider_up: "]"
+    timezone: "z"                   # open the timezone selector on the Time tab
 
 # Lets every layer share these.
 layer_defaults:
@@ -155,7 +156,7 @@ map:
   lat_min: -58.0               # visible latitude band (Antarctica is not loaded)
   lat_max: 84.0
   # Labels for the world view: ISO alpha-2 code by default, these override it.
-  country_code_overrides: {US: "USA", GB: "UK"}
+  country_code_overrides: {GB: "UK"}
   zoom:
     min: 1                     # fully zoomed out = whole world (also the starting zoom)
     max: 64

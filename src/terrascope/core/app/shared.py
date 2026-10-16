@@ -95,6 +95,7 @@ def _chars(spec) -> set[int]:
     return codes
 
 _KEY_CONFIG = APP_CONFIG["keys"]
+_TIMEZONE_KEY_SPEC = _KEY_CONFIG.get("timezone", "z")
 KEYS = {
     "quit": _chars(_KEY_CONFIG["quit"]),
     "redraw": {12},
@@ -114,9 +115,15 @@ KEYS = {
     "reset_view": _chars(_KEY_CONFIG["reset_view"]),
     "slider_down": _chars(_KEY_CONFIG["slider_down"]),
     "slider_up": _chars(_KEY_CONFIG["slider_up"]),
+    "timezone": _chars(_TIMEZONE_KEY_SPEC),
     "confirm": {10, 13, curses.KEY_ENTER},
     "cancel": {27},
     "backspace": {curses.KEY_BACKSPACE, 127, 8},
 }
+TIMEZONE_KEY = str(
+    _TIMEZONE_KEY_SPEC[0]
+    if isinstance(_TIMEZONE_KEY_SPEC, (list, tuple))
+    else _TIMEZONE_KEY_SPEC
+).upper()
 
 __all__ = [name for name in globals() if not name.startswith("__")]

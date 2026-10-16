@@ -266,6 +266,9 @@ class InputMixin:
         if planes_tab and key in KEYS["filter"]:
             self.enter_filter_mode()
             return
+        if TABS[self.active_tab].name == "time" and key in KEYS["timezone"]:
+            self.open_tz_dropdown()
+            return
         if key == curses.KEY_MOUSE:
             self.handle_mouse()
             return
