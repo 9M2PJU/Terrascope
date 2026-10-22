@@ -127,7 +127,7 @@ jobs:
             cd "$workdir/$pkg"
             if git status --porcelain | grep -q .; then
               git add PKGBUILD .SRCINFO
-              git -c user.name="terrascope-bot" -c user.email="a-shygun@users.noreply.github.com" \
+              git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
                 commit -m "Update $pkg from ${GITHUB_REF_NAME:-manual run}"
               git push origin master
             else
