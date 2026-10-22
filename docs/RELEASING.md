@@ -33,9 +33,10 @@ Checksums for all assets are published as `terrascope_checksums.txt`.
    `Formula/terrascope.rb` in place; it reads its stable version from
    `pyproject.toml`, so no separate tap copy or version edit is needed.
 4. AUR publishing uses `.github/workflows/aur.yml`:
-   - Current AUR maintainer is 9M2PJU (`9m2pju@gmail.com`), listed as
+   - AUR maintainer is 9M2PJU (`9m2pju@gmail.com`), listed as
      `Maintainer` in `packaging/aur/*/PKGBUILD`. Upstream is listed as
-     `Contributor` until the handover.
+     `Contributor`, and will be added as AUR co-maintainer once registered.
+     No ownership handover is planned.
    - The maintainer holds the AUR account and SSH key at
      https://aur.archlinux.org/account, and stores the private key as the
      `AUR_SSH_PRIVATE_KEY` repository secret wherever publishing runs.
@@ -46,9 +47,9 @@ Checksums for all assets are published as `terrascope_checksums.txt`.
    - Without the secret the workflow still updates
      `packaging/aur/terrascope/PKGBUILD` and `.SRCINFO` in its run log but
      skips the push with instructions. This is the expected state on upstream
-     until the upstream maintainer registers on the AUR and takes over
-     (or is added as co-maintainer) — publishing continues from the current
-     maintainer's checkout/key in the meantime.
+     until the upstream maintainer registers on the AUR and is added as
+     co-maintainer — 9M2PJU remains the primary maintainer and continues
+     publishing.
 
 ## Release a version
 
