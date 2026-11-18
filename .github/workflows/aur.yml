@@ -120,7 +120,7 @@ jobs:
           set -euo pipefail
           workdir="$(mktemp -d)"
           trap 'rm -rf "$workdir"' EXIT
-          for pkg in terrascope terrascope-git; do
+          for pkg in terrascope terrascope-bin terrascope-git; do
             rm -rf "$workdir/$pkg"
             git clone "ssh://aur@aur.archlinux.org/$pkg.git" "$workdir/$pkg"
             cp "packaging/aur/$pkg/PKGBUILD" "packaging/aur/$pkg/.SRCINFO" "$workdir/$pkg/"
